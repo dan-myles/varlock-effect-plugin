@@ -83,6 +83,25 @@ bun install
 bun run check
 ```
 
+## Publish
+
+Sign in to npm once:
+
+```sh
+npm login
+npm whoami
+```
+
+Then publish:
+
+```sh
+bun run release
+```
+
+The `prepublishOnly` hook runs typechecking, tests, and the production build before npm uploads the
+package. npm refuses to overwrite an existing version, so bump `version` in `package.json` before
+later releases.
+
 ## License
 
 MIT
